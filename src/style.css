@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    background-size: contain;
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#searchContainer {
+    margin: 0;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.card {
+    margin: 0 auto;
+    float: none;
+    border: 2px solid rgba(36, 159, 236, 0.6);
+    border-radius: 80px;
+}
+
+.container {
+    border: 2px solid rgba(36, 159, 236, 0.6);
+    border-radius: 80px;
+    box-shadow: 0px 27px 21px rgba(0, 0, 0, 0.4);
+    margin-top: 50px;
+    margin-right: 50px;
+    display: block;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+h1 {
+    color: cornflowerblue;
+    font-size: 34px;
+    line-height: 48px;
+    margin: 0;
+}
