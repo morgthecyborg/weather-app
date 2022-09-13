@@ -34,6 +34,7 @@ currentDatess.innerHTML = displayDate();
 
 //Displays city's name + temperature
 function showWeather(response) {
+  console.log(response.data);
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#city-header").innerHTML = response.data.name;
   document.querySelector("#description").innerhtml = response.data.weather[0].description.toUpperCase;
