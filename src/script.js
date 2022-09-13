@@ -34,10 +34,9 @@ currentDatess.innerHTML = displayDate();
 
 //Displays city's name + temperature
 function showWeather(response) {
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#city-header").innerHTML = response.data.name;
+  document.querySelector("#description").innerhtml = response.data.weather[0].description.toUpperCase;
 }
 
 function searchCityInput(city) {
