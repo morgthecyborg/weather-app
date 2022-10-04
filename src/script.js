@@ -1,7 +1,14 @@
-//Displays Date
-function displayDate() {
-  let now = new Date();
-  let weekday = [
+function formatDate(timestamp){
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10){
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10){
+    minutes = `0${minutes}`;
+  }
+  let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -10,45 +17,34 @@ function displayDate() {
     "Friday",
     "Saturday"
   ];
-  let day = weekday[now.getDay()];
-  let hours = now.getHours();
-  hours = hours <= 9 ? "0" + hours : hours;
-  let minutes = now.getMinutes();
-  minutes = minutes <= 9 ? "0" + minutes : minutes;
-  let today = `${day}, ${hours}:${minutes}`;
-  return today;
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
 
-let currentDatess = document.querySelector("#current-date");
-currentDatess.innerHTML = displayDate();
-
-// //Replaces header with input city
-// function searchCity(event) {
-//   event.preventDefault();
-//   let searchCityInput = document.querySelector("#search-city-input");
-//   let h1 = document.querySelector("#city-header");
-//   h1.innerHTML = `${searchCityInput.value}`;
-// }
-// let inputCity = document.querySelector("#search-form");
-// inputCity.addEventListener("submit", searchCity);
-
-//Displays city's name + temperature
 function showWeather(response) {
   console.log(response.data);
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
-  document.querySelector("#city-header").innerHTML = response.data.name;
-  document.querySelector("#description").innerhtml = response.data.weather[0].description;
-  document.querySelector("#precipitation").innerHTML = Math.round(response.data.main.pressure);
-  document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
-  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
- 
+  let temperatureElement = document.querySelector("#temperature")
+  let cityElement = document.querySelector("#city-header");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement = response.data.weather[0].description;
+  humidityElement = response.data.main.humidity;
+  windElement = Math.round(response.data.wind.speed);
+  dateElement = formatDate(response.data.dt * 1000 );
+  iconElement.setAttribute("src", displayImage(response.data.weather[0].icon));
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCityInput(city) {
   let apiKey = "946eb03de98f13f75348afbef5cbdb30";
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showWeather);
-  console.log(testing);
+
 }
 
 function receieveSubmitInput(event) {
@@ -75,3 +71,33 @@ function change_background() {
   console.log("test");
 
 change_background();
+
+function displayWeathericon(icon){
+  let iconURL = "";
+  if (icon === `01n.png`){
+    icon = `fa-solid fa-sun fa-7xl icon-cog`;
+  } else if (icon === `01n.png`){
+    icon = `fa-solid fa-moon-stars fa-7xl icon-cog`;
+  } else if (icon === `02d.png`){
+    icon = `fa-solid fa-cloud-sun fa-7xl icon-cog`;
+  } else if (icon === `02n.png`){
+    icon = `fa-solid fa-cloud-moon fa-7xl icon-cog`;    
+  } else if (icon === `03d.png` || icon === `03n.png`){
+    icon = `fa-solid fa-cloud fa-7xl icon-cog`;
+  } else if (icon === `04d.png` || icon ===`04n.png`){
+    icon = `fa-solid fa-clouds fa-7xl icon-cog`;
+  } else if (icon === `09d.png` || icon ===`09n.png`){
+    icon = `fa-solid fa-cloud-drizzle fa-7xl icon-cog`;
+  } else if (icon === `10d.png` || icon ===`10n.png`){
+    icon = `fa-solid fa-cloud-showers-heavy fa-7xl icon-cog`;
+  } else if (icon === `11d.png`){
+    icon = `fa-solid fa-cloud-bolt-sun fa-7xl icon-cog`;
+  } else if (icon ===`11n.png`){
+    icon = `fa-solid fa-cloud-bolt-moon fa-7xl icon-cog`;
+  } else if (icon === `13d.png` || icon === `13n.png`){
+    icon = `fa-solid fa-snowflakes fa-7xl icon-cog`;
+  } else if (icon === `50d.png` || `50n.png`){
+    icon = `fa-solid fa-smog fa-7xl icon-cog`;
+  }
+return iconURL;
+}

@@ -44,24 +44,47 @@ body {
 
 #todays-forecast {
     padding-bottom: 0;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
-li {
+
+
+ul{
+    padding: 0px;
+    margin: 0;
+}
+
+li{
     list-style: none;
     padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.dayOfWeekContainer{
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .dayOfWeek {
-background: radial-gradient(rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.2) 100%);
+    background: radial-gradient(rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.2) 100%);
     box-shadow: 9px 9px 14px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     width: 100px;
-        display: block;
-        padding-top: 30px;
-            text-align: center;
-            margin-left: 15px;
-            margin-right: auto;
+    display: block;
+    padding-top: 30px;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 15px;
+
 }
 
 .icon-cog{
@@ -95,4 +118,10 @@ h1 {
     font-size: 34px;
     line-height: 48px;
     margin: 0;
+}
+
+#temperature {
+    font-weight: 700px;
+    font-size: 36px;
+    line-height: 28px;
 }
