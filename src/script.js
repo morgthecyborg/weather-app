@@ -30,6 +30,8 @@ function showWeather(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  // icon ID from the API
+  let iconId = response.data.weather[0].icon;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -40,7 +42,9 @@ function showWeather(response) {
   humidityElement = response.data.main.humidity;
   windElement = Math.round(response.data.wind.speed);
   dateElement = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute("src", displayImage(response.data.weather[0].icon));
+  iconDescription = response.data.weather[0].main;
+  // iconElement.setAttribute("src", displayWeathericon(iconURL));
+  iconElement.className = displayWeathericon(iconId);
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
@@ -76,32 +80,32 @@ function change_background() {
 
 change_background();
 
-function displayWeathericon(icon){
-  let iconURL = "";
-  if (icon === `01n.png`){
-    icon = `fa-solid fa-sun fa-7xl icon-cog`;
-  } else if (icon === `01n.png`){
-    icon = `fa-solid fa-moon-stars fa-7xl icon-cog`;
-  } else if (icon === `02d.png`){
-    icon = `fa-solid fa-cloud-sun fa-7xl icon-cog`;
-  } else if (icon === `02n.png`){
-    icon = `fa-solid fa-cloud-moon fa-7xl icon-cog`;    
-  } else if (icon === `03d.png` || icon === `03n.png`){
-    icon = `fa-solid fa-cloud fa-7xl icon-cog`;
-  } else if (icon === `04d.png` || icon ===`04n.png`){
-    icon = `fa-solid fa-clouds fa-7xl icon-cog`;
-  } else if (icon === `09d.png` || icon ===`09n.png`){
-    icon = `fa-solid fa-cloud-drizzle fa-7xl icon-cog`;
-  } else if (icon === `10d.png` || icon ===`10n.png`){
-    icon = `fa-solid fa-cloud-showers-heavy fa-7xl icon-cog`;
-  } else if (icon === `11d.png`){
-    icon = `fa-solid fa-cloud-bolt-sun fa-7xl icon-cog`;
-  } else if (icon ===`11n.png`){
-    icon = `fa-solid fa-cloud-bolt-moon fa-7xl icon-cog`;
-  } else if (icon === `13d.png` || icon === `13n.png`){
-    icon = `fa-solid fa-snowflakes fa-7xl icon-cog`;
-  } else if (icon === `50d.png` || `50n.png`){
-    icon = `fa-solid fa-smog fa-7xl icon-cog`;
+function displayWeathericon(iconId){
+  let iconClass = "";
+  if (iconId === `01d`){
+    iconClass = `fa-sun`;
+  } else if (iconId === `01n`){
+    iconClass = `fa-moon`;
+  } else if (iconId === `02d`){
+    iconClass = `fa-cloud-sun`;
+  } else if (iconId === `02n`){
+    iconClass = `fa-cloud-moon`;    
+  } else if (iconId === `03d` || iconId === `03n` || iconId === `04d` || iconId ===`04n`){
+    iconClass = `fa-cloud`;
+  } else if (iconId === `09d`){
+    iconClass = `fa-cloud-rain`;
+  } else if (iconId ===`09n`){
+    iconClass = `fa-cloud-moon-rain`
+  } else if (iconId === `10d`){
+    iconClass = `fa-cloud-showers-heavy`;
+  } else if (iconId ===`10n`){
+    iconClass = `fa-cloud-moon-rain`
+  } else if (iconId === `11d` || iconId ===`11n`){
+    iconClass = `fa-cloud-bolt`;
+  } else if (iconId === `13d` || iconId === `13n`){
+    iconClass = `fa-snowflake`;
+  } else if (iconId === `50d` || iconId === `50n`){
+    iconClass = `fa-smog`;
   }
-return iconURL;
+  return "fa-solid " + iconClass + " fa-7x icon-cog";
 }
