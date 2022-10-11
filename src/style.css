@@ -1,4 +1,4 @@
-.daylight {
+/* .daylight {
     background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@
     background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
     background-attachment: fixed;
     background-repeat: no-repeat;
-}
+} */
 
 body {
     display: block;
@@ -22,21 +22,35 @@ body {
     background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
+    background: url("/images/trees-highway.mp4") no-repeat;
+    background-size: cover;
+    @font-face {
+        font-family: Antically;
+        src: url(AnticallyRegular-OVox8.ttf);
+    }
 }
 
-.main-body{
-    align-items: center;
-    justify-content: center;
-    display: block;
-    text-align: center;
-    padding:20px;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    overflow-x: hidden;
-    margin: 0 auto;
+#background-video {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#main-body{
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 20 auto;
-    position: absolute;
+    display: block;
+    @font-face {
+    font-family: Antically;
+    src: url(AnticallyRegular-OVox8.ttf);
+    }
 
 }
 
@@ -73,8 +87,8 @@ li{
 
 .dayOfWeek {
     background: radial-gradient(rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.2) 100%);
-    box-shadow: 9px 9px 14px rgba(0, 0, 0, 0.2);
+                rgba(255, 255, 255, 0.7) 100%);
+    box-shadow: 9px 9px 14px rgba(0, 0, 0, 0.4);
     border-radius: 15px;
     width: 100px;
     display: block;
@@ -97,9 +111,9 @@ padding: 75px;
 }
 
 .container {
-    background: radial-gradient(rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.2) 100%);
-    box-shadow: 9px 9px 14px rgba(0, 0, 0, 0.2);
+    background: radial-gradient(rgba(255, 255, 255, 0.2) 0%,
+                rgba(255, 255, 255, 0.6) 100%);
+    box-shadow: 9px 9px 64px rgba(0, 0, 0, 0.4);
     /* border: 2px solid rgba(36, 159, 236, 0.6); */
     border-radius: 80px;
     /* box-shadow: 0px 27px 21px rgba(0, 0, 0, 0.4); */
