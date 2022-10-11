@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather App | SheCodes</title>
     <link rel="stylesheet" href="src/style.css" />
@@ -14,71 +14,63 @@
 </head>
 
 <body class="daylight evening night">
-    <div class="row"> 
-        <div class="col">
+    <div class="container" id="main-body">
+        <div class="container" id="searchContainer">
+            <form id="search-form">
+                <input class="input" type="text" placeholder="Enter city" autocomplete="off" autofocus="on"
+                    id="search-city-input">
+                <input class="input" type="submit" value="Search"></input>
+            </form>
         </div>
-        <div class="col-6">
-            <div class="container" id="main-body">
-                <div class="container" id="searchContainer">
-                    <form id="search-form">
-                        <input class="input" type="text" placeholder="Enter city" autocomplete="off" autofocus="on"
-                            id="search-city-input">
-                        <input class="input" type="submit" value="Search"></input>
-                    </form>
-                </div>
-                <div class="row" id="todays-forecast">
-                    <div class="col-6">
-                        <h1 id="city-header">New York</h1>
-                        <ul>
-                            <li id="date">Thursday, 12:00</li>
-                            <li id="description">Sunny</li>
-                            <li>Humidity: <span id="humidity"></span></li>
-                            <li>Wind: <span id="wind"></span>km/h</li>
-                        </ul>
-                    </div>
-                    <div class="col-6 d-flex">
-                        <div id="temperature"></div><span class="#units">F° | <a href="#"></a>C°</span>
-                        <i id="icon"></i>
-                    </div>
-                </div>
-                <div class="row dayOfWeekContainer">
-                    <div class="col dayOfWeek">
-                                <i class="fa-solid fa-cloud fa-2xl icon-cog"></i><br />
-                                <br />
-                                <h5 class="day">Thur</h5>
-                                <p class="col">77°F</p>
-                    </div>
-                    <div class="col dayOfWeek">
-                                <i class="fa-solid fa-cloud-showers-heavy fa-2xl icon-cog"></i><br />
-                                <br />
-                                <h5 class="day">Fri</h5>
-                                <p class="col">79°F</p>
-                    </div>
-                    <div class="col dayOfWeek">
-                                <i class="fa-solid fa-cloud-sun-rain fa-2xl icon-cog"></i><br />
-                                <br />
-                                <h5 class="day">Sat</h5>
-                                <p class="col">81°F</p>
-                    </div>
-                    <div class="col dayOfWeek">
-                                <i class="fa-solid fa-cloud-sun-rain fa-2xl icon-cog"></i><br />
-                                <br />
-                                <h5 class="day">Sun</h5>
-                                <p class="col">82°F</p>
-                    </div>
-                    <div class="col dayOfWeek">
-                                <i class="fa-solid fa-sun fa-2xl icon-cog"></i><br />
-                                <br />
-                                <h5 class="day">Mon</h5>
-                                <p class="col">80°F</p>
-                    </div>
-                </div>
-                </div>
+        <div class="row" id="todays-forecast">
+            <div class="col-6">
+                <h1 id="city-header">New York</h1>
+                <ul>
+                    <li id="date">Thursday, 12:00</li>
+                    <li id="description">Sunny</li>
+                    <li>Humidity: <span id="humidity"></span></li>
+                    <li>Wind: <span id="wind"></span>km/h</li>
+                </ul>
+            </div>
+            <div class="col-6 d-flex">
+                <div id="temperature"></div><span class="#units"><a href="#" id="celsius">C°</a> | <a href="#" id="fahrenheit">F°</a></span>
+                <i id="icon"></i>
+            </div>
         </div>
-        <div class="col">
+        <div class="row dayOfWeekContainer">
+            <div class="col dayOfWeek">
+                        <i class="fa-solid fa-cloud fa-2xl icon-cog"></i><br />
+                        <br />
+                        <h5 class="day">Thur</h5>
+                        <p class="col">77°F</p>
+            </div>
+            <div class="col dayOfWeek">
+                        <i class="fa-solid fa-cloud-showers-heavy fa-2xl icon-cog"></i><br />
+                        <br />
+                        <h5 class="day">Fri</h5>
+                        <p class="col">79°F</p>
+            </div>
+            <div class="col dayOfWeek">
+                        <i class="fa-solid fa-cloud-sun-rain fa-2xl icon-cog"></i><br />
+                        <br />
+                        <h5 class="day">Sat</h5>
+                        <p class="col">81°F</p>
+            </div>
+            <div class="col dayOfWeek">
+                        <i class="fa-solid fa-cloud-sun-rain fa-2xl icon-cog"></i><br />
+                        <br />
+                        <h5 class="day">Sun</h5>
+                        <p class="col">82°F</p>
+            </div>
+            <div class="col dayOfWeek">
+                        <i class="fa-solid fa-sun fa-2xl icon-cog"></i><br />
+                        <br />
+                        <h5 class="day">Mon</h5>
+                        <p class="col">80°F</p>
+            </div>
         </div>
     </div>
-        <p><a href="https://github.com/morgthecyborg/weather-app" target="_blank">Open-source code</a>, by Morgan Sanchez</p>
+    <p><a href="https://github.com/morgthecyborg/weather-app" target="_blank">Open-source code</a>, by Morgan Sanchez</p>
         <script src="src/script.js"></script>
 </body>
 

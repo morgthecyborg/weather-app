@@ -29,12 +29,19 @@ body {
     justify-content: center;
     display: block;
     text-align: center;
-    width: 700px;
-    padding-left: 40px;
+    padding:20px;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
+    padding: 20 auto;
+    position: absolute;
+
 }
 
 #searchContainer {
-    margin: 0;
+    margin: 0 auto;
     display: block;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -45,8 +52,7 @@ body {
 #todays-forecast {
     padding-bottom: 0;
     padding-top: 25px;
-    padding-left: 25px;
-    padding-right: 25px;
+    text-align: center;
 }
 
 
@@ -65,11 +71,6 @@ li{
     line-height: 1.5;
 }
 
-.dayOfWeekContainer{
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
 .dayOfWeek {
     background: radial-gradient(rgba(255, 255, 255, 0) 0%,
                 rgba(255, 255, 255, 0.2) 100%);
@@ -81,8 +82,8 @@ li{
     text-align: center;
     margin-left: 15px;
     margin-right: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-bottom: 15px;
 
 }
@@ -102,15 +103,11 @@ padding: 75px;
     /* border: 2px solid rgba(36, 159, 236, 0.6); */
     border-radius: 80px;
     /* box-shadow: 0px 27px 21px rgba(0, 0, 0, 0.4); */
-    margin-top: 50px;
-    margin-right: 50px;
     padding-top: 75px;
     padding-bottom: 75px;
-    margin-bottom: 60px;
-    width: 500px;
     display: block;
-        align-items: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -122,6 +119,7 @@ h1 {
 
 #temperature {
     font-weight: 700px;
-    font-size: 36px;
+    font-size: 70px;
     line-height: 28px;
+    text-align: center;
 }

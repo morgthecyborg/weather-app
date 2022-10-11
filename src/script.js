@@ -1,3 +1,8 @@
+//FUNCTIONALITY FIRST
+
+//Create celcius farenheight conversion
+//Forecast Next
+
 function formatDate(timestamp){
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -23,7 +28,7 @@ function formatDate(timestamp){
 
 function showWeather(response) {
   console.log(response.data);
-  let temperatureElement = document.querySelector("#temperature");
+  let celsiusElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city-header");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -32,7 +37,9 @@ function showWeather(response) {
   let iconElement = document.querySelector("#icon");
   // icon ID from the API
   let iconId = response.data.weather[0].icon;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+  celsiusElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -64,21 +71,44 @@ function receieveSubmitInput(event) {
 let inputCity = document.querySelector("#search-form");
 inputCity.addEventListener("submit", receieveSubmitInput);
 
-//Changes background color by time of day
-setInterval(change_background, 1000 * 60 * 60);
+let fahrenheit = document.querySelector("#fahrenheit");
+let celsius = document.querySelector("#celsius");
+fahrenheit.addEventListener("click", showFahrenheitTemperature);
+celsius.addEventListener("click", showCelsiusTemperature);
 
-function change_background() {
-  if (hours == 23 || hours < 20) {
-    document.body.className = "night";
-  } else if(hours == 20|| hours > 18){
-    document.body.className = "evening";
-  }else{
-    document.body.className = "daylight";
-  }
-  }
-  console.log("test");
+function showFahrenheitTemperature(event){
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemperature = celsiusTemperature * 1.8 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 
-change_background();
+function showCelsiusTemperature(event){
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+
+// //Changes background color by time of day
+// setInterval(change_background, 1000 * 60 * 60);
+
+// function change_background() {
+//   if (hours == 23 || hours < 20) {
+//     document.body.className = "night";
+//   } else if(hours == 20|| hours > 18){
+//     document.body.className = "evening";
+//   }else{
+//     document.body.className = "daylight";
+//   }
+//   }
+//   console.log("test");
+
+// change_background();
 
 function displayWeathericon(iconId){
   let iconClass = "";
