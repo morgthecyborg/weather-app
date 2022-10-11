@@ -12,12 +12,13 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/7cf18b44c2.js" crossorigin="anonymous"></script>
 </head>
-<body class="daylight evening night">
+<body>
 <video autoplay muted loop id="background-video">
     <source src="src/images/trees-highway.mp4" type="video/mp4">
 </video>
 </video>
     <div class="container col-md-6" id="main-body">
+        <h1 id="top-header">Hello, Fall!</h1>
         <div class="container" id="searchContainer">
             <form id="search-form">
                 <input class="input" type="text" placeholder="Enter city" autocomplete="off" autofocus="on"
@@ -26,10 +27,10 @@
             </form>
         </div>
         <div class="row" id="todays-forecast">
-            <div class="col-6">
-                <h1 id="city-header">New York</h1>
+            <div class="col-sm-6">
                 <ul>
-                    <li id="date">Thursday, 12:00</li>
+                    <li><span id="city-header">New York</span></li>
+                    <li><span id="date">Thursday, 12:00</span></li>
                     <li id="description">Sunny</li>
                     <li>Humidity: <span id="humidity"></span></li>
                     <li>Wind: <span id="wind"></span>km/h</li>
@@ -42,8 +43,9 @@
         </div>
         <div class="dayOfWeekContainer" id="forecast">
         </div>
+            <p id="open-source"><a href="https://github.com/morgthecyborg/weather-app" target="_blank">Open-source code</a>, by
+                Morgan Sanchez</p>
     </div>
-    <p><a href="https://github.com/morgthecyborg/weather-app" target="_blank">Open-source code</a>, by Morgan Sanchez</p>
         <script src="src/script.js"></script>
 </body>
 

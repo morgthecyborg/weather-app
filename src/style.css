@@ -7,10 +7,7 @@ body {
     justify-content: center;
     background: url("/images/trees-highway.mp4") no-repeat;
     background-size: cover;
-    @font-face {
-        font-family: Antically;
-        src: url(AnticallyRegular-OVox8.ttf);
-    }
+    font-family: Blasticia Demo;
 }
 
 #background-video {
@@ -30,11 +27,6 @@ body {
     margin-bottom: 50px;
     padding: 20 auto;
     display: block;
-    @font-face {
-    font-family: Antically;
-    src: url(AnticallyRegular-OVox8.ttf);
-    }
-
 }
 
 #searchContainer {
@@ -44,16 +36,14 @@ body {
     padding-bottom: 50px;
     text-align: center;
     margin-bottom: 50px;
+    font-weight: 300px;
+    font-size: 30px;
 }
 
 #todays-forecast {
     padding-bottom: 0;
     padding-top: 25px;
     text-align: center;
-        @font-face {
-                font-family: Antically;
-                src: url(AnticallyRegular-OVox8.ttf);
-            }
 }
 
 
@@ -68,12 +58,6 @@ li{
     padding: 0;
     margin: 0;
     text-transform: capitalize;
-    font-size: 14px;
-    line-height: 1.5;
-    @font-face {
-            font-family: Antically;
-            src: url(AnticallyRegular-OVox8.ttf);
-        }
 }
 
 .dayOfWeek {
@@ -90,11 +74,6 @@ li{
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 15px;
-    @font-face {
-            font-family: Antically;
-            src: url(AnticallyRegular-OVox8.ttf);
-        }
-
 }
 
 .icon-cog{
@@ -113,31 +92,49 @@ padding: 75px;
     border-radius: 80px;
     /* box-shadow: 0px 27px 21px rgba(0, 0, 0, 0.4); */
     padding-top: 75px;
-    padding-bottom: 75px;
+    padding-bottom: 10px;
     display: block;
     align-items: center;
     justify-content: center;
-    @font-face {
-            font-family: Antically;
-            src: url(AnticallyRegular-OVox8.ttf);
-        }
+    font-family: Blasticia Demo;
 }
 
-h1 {
-    color: white;
-    font-weight: 700px;
-    font-size: 70px;
+#top-header{
+    font-weight: 300px;
+    font-size: 80px;
     line-height: 28px;
-    margin: 0;
-    @font-face {
-            font-family: Antically;
-            src: url(AnticallyRegular-OVox8.ttf);
-        }
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.day {
+    font-weight: 200px;
+    font-size: 36px;
+}
+
+p, h5, ul, li {
+    font-weight: 200px;
+    font-size: 36px;
+}
+
+#city-header {
+    font-weight: 300px;
+    font-size: 80px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 20px auto;
 }
 
 #temperature {
     font-weight: 700px;
-    font-size: 70px;
+    font-size: 100px;
     line-height: 28px;
+    text-align: center;
+}
+
+#open-source {
+    font-weight: 200px;
+    font-size: 20px;
+    color: white;
     text-align: center;
 }
