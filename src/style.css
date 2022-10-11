@@ -7,7 +7,7 @@ body {
     justify-content: center;
     background: url("/images/trees-highway.mp4") no-repeat;
     background-size: cover;
-    font-family: Blasticia Demo;
+    font-family: OPTIAmadeus;
 }
 
 #background-video {
@@ -46,7 +46,9 @@ body {
     text-align: center;
 }
 
-
+.d-flex{
+    padding-left: 30px;
+}
 
 ul{
     padding: 0px;
@@ -61,8 +63,12 @@ li{
 }
 
 .dayOfWeek {
-    background: radial-gradient(rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.7) 100%);
+    background: radial-gradient(rgba(255,
+                    182,
+                    182, 0.8) 0%,
+                rgba(255,
+                    214,
+                    171, 0.8) 100%);
     box-shadow: 9px 9px 14px rgba(0, 0, 0, 0.4);
     border-radius: 15px;
     width: 100px;
@@ -85,8 +91,12 @@ padding: 75px;
 }
 
 .container {
-    background: radial-gradient(rgba(255, 255, 255, 0.2) 0%,
-                rgba(255, 255, 255, 0.6) 100%);
+    background: radial-gradient(rgba(255,
+        182,
+        182, 0.8) 0%,
+                rgba(255,
+                    214,
+                    171, 0.8) 100%);
     box-shadow: 9px 9px 64px rgba(0, 0, 0, 0.4);
     /* border: 2px solid rgba(36, 159, 236, 0.6); */
     border-radius: 80px;
@@ -96,7 +106,7 @@ padding: 75px;
     display: block;
     align-items: center;
     justify-content: center;
-    font-family: Blasticia Demo;
+    font-family: OPTIAmadeus;
 }
 
 #top-header{
@@ -131,6 +141,15 @@ p, h5, ul, li {
     line-height: 28px;
     text-align: center;
 }
+
+.units {
+        font-weight: 200px;
+            font-size: 36px;
+}
+
+/* #temp-column {
+    justify-content: flex-end;
+} */
 
 #open-source {
     font-weight: 200px;
