@@ -8,6 +8,11 @@ body {
     background: url("/images/trees-highway.mp4") no-repeat;
     background-size: cover;
     font-family: OPTIAmadeus;
+        @font-face {
+            font-family: OPTIAmadeus;
+            src: local("OPTIAmadeus"),
+                url(OPTIAmadeus-solid.otf);
+        }
 }
 
 #background-video {
@@ -107,6 +112,11 @@ padding: 75px;
     align-items: center;
     justify-content: center;
     font-family: OPTIAmadeus;
+    @font-face {
+            font-family: OPTIAmadeus;
+            src: local("OPTIAmadeus"),
+                url(OPTIAmadeus-solid.otf);
+        }
 }
 
 #top-header{
