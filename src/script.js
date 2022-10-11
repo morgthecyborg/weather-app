@@ -26,6 +26,20 @@ function formatDate(timestamp){
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function getForecast(coordinates){
+  let apiKey = "946eb03de98f13f75348afbef5cbdb30";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(showForecast);
+}
+
 function showWeather(response) {
   console.log(response.data);
   let celsiusElement = document.querySelector("#temperature");
@@ -50,9 +64,11 @@ function showWeather(response) {
   windElement = Math.round(response.data.wind.speed);
   dateElement = formatDate(response.data.dt * 1000);
   iconDescription = response.data.weather[0].main;
-  // iconElement.setAttribute("src", displayWeathericon(iconURL));
-  iconElement.className = displayWeathericon(iconId);
+  // iconElement.setAttribute("src", displayWeatherIcon(iconURL));
+  iconElement.className = displayWeatherIcon(iconId);
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCityInput(city) {
@@ -110,7 +126,7 @@ let celsiusTemperature = null;
 
 // change_background();
 
-function displayWeathericon(iconId){
+function displayWeatherIcon(iconId){
   let iconClass = "";
   if (iconId === `01d`){
     iconClass = `fa-sun`;
@@ -137,5 +153,27 @@ function displayWeathericon(iconId){
   } else if (iconId === `50d` || iconId === `50n`){
     iconClass = `fa-smog`;
   }
-  return "fa-solid " + iconClass + " fa-7x icon-cog";
+  return "fa-solid " + iconClass + " fa-4x icon-cog";
+}
+
+function showForecast(response){
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function(forecastDay, index){
+    if (index < 6){
+      forecastHTML = forecastHTML + 
+    `<div class="col dayOfWeek">
+                <i class="${displayWeatherIcon(forecastDay.weather[0].icon)}"></i><br />
+                <br />
+                <h5 class="day">${formatDay(forecastDay.dt)}</h5>
+                <p class="forecast-weather-temps"><span class="forecast-max">${Math.round(forecastDay.temp.max)}</span>° | <span class="forecast-min">${Math.round(forecastDay.temp.min)}</span>°</p>
+    </div>`;
+    }
+  });
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
 }
