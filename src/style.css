@@ -1,7 +1,7 @@
 @font-face {
     font-family: OPTIAmadeus;
     src: local("OPTIAmadeus"), local("OPTIAmadeus"),
-        url(OPTIAmadeus-solid.otf);
+        url(./OPTIAmadeus-solid.otf);
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
-    background: url("/images/trees-highway.mp4") no-repeat;
+    background: url("./images/trees-highway.mp4") no-repeat;
     background-size: cover;
     font-family: OPTIAmadeus;
 }
