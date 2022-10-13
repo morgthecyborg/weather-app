@@ -17,7 +17,7 @@ body {
 }
 
 #background-video {
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     object-fit: cover;
     position: fixed;
@@ -32,6 +32,7 @@ body {
     margin-bottom: 50px;
     padding: 20 auto;
     display: block;
+    margin-top: 50px;
 }
 
 #searchContainer {
