@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
     align-items: center;
     justify-content: center;
-    background: url("./images/coverr-curvy-road-in-a-snow-covered-forest.mp4") no-repeat;
+    background: url("src/images/coverr-curvy-road-in-a-snow-covered-forest.mp4") no-repeat;
     background-size: cover;
     font-family: OPTIAmadeus;
 }
@@ -135,6 +135,13 @@ p, h5, ul, li {
     font-size: 100px;
     line-height: 28px;
     text-align: center;
+}
+
+.today-icon {
+        font-weight: 700px;
+            font-size: 100px;
+            line-height: 28px;
+            text-align: center;
 }
 
 .units {
